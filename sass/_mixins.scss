@@ -1,0 +1,46 @@
+@mixin flexCenetr($dir, $justify) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin cardColors() {
+    #card_one {
+        background-color: #f9c9af;
+    }
+    .icon1,
+    #icon1 {
+        background-color: #9c5858;
+    }
+    #card2 {
+        background-color: #f3cd9b;
+    }
+    #icon2 {
+        background-color: #c7a67a;
+    }
+    #icon3 {
+        background-color: #997efa;
+    }
+    #card3 {
+        background-color: #c9bdf4;
+    }
+    #icon4 {
+        background-color: #a98357;
+    }
+    #card4 {
+        background-color: #dac0a3;
+    }
+    #icon5 {
+        background-color: #d15574;
+    }
+    #card5 {
+        background-color: #fbb7c8;
+    }
+    #icon6 {
+        background-color: #497f85;
+    }
+    #card6 {
+        background-color: #a1ccd1;
+    }
+}

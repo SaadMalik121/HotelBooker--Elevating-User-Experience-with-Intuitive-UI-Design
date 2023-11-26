@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./sass/main.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/jquerry/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/jquerry/dist/assets/owl.theme.default.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="/assets/jquerry/dist/owl.carousel.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+      integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const nav = document.getElementById("nav");
+      function toggleMenu() {
+        const menuList = document.querySelector(".menu_list");
+
+        menuList.classList.toggle("show");
+      }
+    </script>
+
+    <script>
+      function increment(elem, finalVal) {
+        var currVal = parseInt(document.getElementById(elem).innerHTML, 10);
+        if (currVal < finalVal) {
+          currVal++;
+          document.getElementById(elem).innerHTML = currVal + "+";
+
+          setTimeout(function () {
+            increment(elem, finalVal);
+          }, 20);
+        }
+      }
+      $(document).ready(function () {
+        $("#cities").waypoint(
+          function () {
+            increment("cities", 100);
+          },
+          { offset: "80%" }
+        );
+        $("#customers").waypoint(
+          function () {
+            increment("customers", 300);
+          },
+          { offset: "80%" }
+        );
+        $("#hotels").waypoint(
+          function () {
+            increment("hotels", 200);
+          },
+          { offset: "80%" }
+        );
+        $(".about").waypoint(
+          function () {
+            $(".about").addClass("slideFromLeft");
+          },
+          { offset: "100%" }
+        );
+        $(".ourAim").waypoint(
+          function () {
+            $(".ourAim").addClass("slideFromRight");
+          },
+          { offset: "100%" }
+        );
+        $(".weDo").waypoint(
+          function () {
+            $(".weDo").addClass("fadeIn");
+          },
+          { offset: "100%" }
+        );
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTimeout: 2000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 2,
+            },
+            1000: {
+              items: 3,
+            },
+          },
+        });
+      });
+    </script>
+
+    <style>
+      .item {
+        padding: 20px 10px;
+        background-color: red;
+        margin: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NavBar -->
+    <div>
+      <div class="nav_container">
+        <h1>Hotel<span class="focousText">Booker</span></h1>
+        <ul class="menu_list">
+          <a href="#" class="nav" onclick="toggleMenu()" onclick="toggleMenu()"
+            ><li>Home</li></a
+          >
+          <a href="#aboutUs" class="nav" onclick="toggleMenu()"
+            ><li>About us</li></a
+          >
+          <a href="#ourAim" class="nav" onclick="toggleMenu()"
+            ><li>Our Aim</li></a
+          >
+          <a href="#ourServices" class="nav" onclick="toggleMenu()"
+            ><li>Service</li></a
+          >
+          <a href="#stats" class="nav" onclick="toggleMenu()"><li>Stats</li></a>
+          <a href="#events" class="nav" onclick="toggleMenu()"
+            ><li>Events</li></a
+          >
+          <a href="#testemonials" class="nav" onclick="toggleMenu()"
+            ><li>Testemonials</li></a
+          >
+        </ul>
+
+        <div class="menu_dropdown">
+          <p onclick="toggleMenu()">MENU</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="left_container">
+        <h1>
+          My <span class="focousText">Hotel</span>. <br />
+          A <span class="focousText">luxury</span> Hotel
+        </h1>
+      </div>
+      <div class="right_container">
+        <h3>Book Your hotel</h3>
+        <div class="dialog_container">
+          <div>
+            <p>Check in</p>
+            <input type="date" />
+          </div>
+          <div>
+            <p>Check out</p>
+            <input type="date" />
+          </div>
+          <div>
+            <p>Guests</p>
+            <input type="text" />
+          </div>
+          <div>
+            <p>Rooms</p>
+            <input type="text" />
+          </div>
+
+          <button class="btn">Check Availabilty</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Us section -->
+    <div class="aboutUs about" id="aboutUs">
+      <div>
+        <p class="head">ABOUT US</p>
+
+        <h2 class="title">Intercontinental LA Westlake Hotel</h2>
+
+        <p class="para">
+          Sona.com is a leading online accommodation site. We’re passionate
+          about travel. Every day, we inspire and reach millions of travelers
+          across 90 local websites in 41 languages.
+        </p>
+
+        <p class="para">
+          So when it comes to booking the perfect hotel, vacation rental,
+          resort, apartment, guest house, or tree house, we’ve got you covered.
+        </p>
+        <a class="read_more">READ MORE</a>
+      </div>
+      <div class="img_container">
+        <img src="./assets/cover.avif" alt="" class="img1" />
+        <img src="./assets/cover2.avif" alt="" class="img2" />
+      </div>
+    </div>
+
+    <!-- Our aim section -->
+    <div class="aboutUs ourAim" id="ourAim">
+      <div class="img_container">
+        <img src="./assets/cover3.avif" alt="" class="img2" />
+        <img src="./assets/cover4.avif" alt="" class="img1" />
+      </div>
+      <div>
+        <p class="head">Our aim</p>
+
+        <h2 class="title">What our aim actually is</h2>
+
+        <p class="para">
+          Sona.com is a leading online accommodation site. We’re passionate
+          about travel. Every day, we inspire and reach millions of travelers
+          across 90 local websites in 41 languages.
+        </p>
+
+        <p class="para">
+          So when it comes to booking the perfect hotel, vacation rental,
+          resort, apartment, guest house, or tree house, we’ve got you covered.
+        </p>
+        <a class="read_more">READ MORE</a>
+      </div>
+    </div>
+
+    <!-- What We Do -->
+    <div class="weDo" id="ourServices">
+      <p class="title">What we do</p>
+      <h1>Discover Our Services</h1>
+
+      <div class="does_container">
+        <div class="do_card" id="card_one">
+          <img src="./assets/parking.png" class="icons icon1" />
+
+          <h2>Travel Plan</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+
+        <div class="do_card" id="card2">
+          <img src="./assets/catering.png" class="icons" id="icon2" />
+
+          <h2>Catering Service</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+
+        <div class="do_card" id="card3">
+          <img src="./assets/baby.png" class="icons" id="icon3" />
+
+          <h2>Babysitting</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+
+        <div class="do_card" id="card4">
+          <img src="./assets/laundry.png" class="icons" id="icon4" />
+
+          <h2>Laundry</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+
+        <div class="do_card" id="card5">
+          <img src="./assets/taxi-driver.png" class="icons" id="icon5" />
+
+          <h2>Hire Driver</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+
+        <div class="do_card" id="card6">
+          <img src="./assets/drink.png" class="icons" id="icon6" />
+
+          <h2>Bar & Drink</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="statistics" id="stats">
+      <h3>Statistics</h3>
+      <h1>Our Statistical Data</h1>
+      <div class="statistics_container">
+        <div class="statistics_card">
+          <h2>Total Registered Hotels</h2>
+          <p>The totak registered hotels are</p>
+          <h2 id="hotels">100+</h2>
+        </div>
+
+        <div class="statistics_card">
+          <h2>Total Happy Customers</h2>
+          <p>The totak happy customers are</p>
+          <h2 id="customers">100+</h2>
+        </div>
+
+        <div class="statistics_card">
+          <h2>Total Cities</h2>
+          <p>The total covered cities are</p>
+          <h2 id="cities">1+</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel News Blog And Events -->
+    <div class="hotelNewsContainer" id="events">
+      <h4>Hotel News</h4>
+      <h1>Our Blogs and Events</h1>
+      <div class="images_container">
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">January 21st, 2022</span>
+            <img src="./assets/cover3.avif" alt="" class="event_card" />
+          </div>
+        </div>
+
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">March 21, 2023</span>
+            <img src="./assets/cover4.avif" alt="" class="event_card" />
+          </div>
+        </div>
+
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">March 21, 2023</span>
+            <img src="./assets/cover.avif" alt="" class="event_card" />
+          </div>
+        </div>
+
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">March 21, 2023</span>
+            <img src="./assets/cover2.avif" alt="" class="event_card" />
+          </div>
+        </div>
+
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">March 21, 2023</span>
+            <img src="./assets/cover.avif" alt="" class="event_card" />
+          </div>
+        </div>
+        <div class="event_container">
+          <div class="event_card">
+            <span class="batch">March 21, 2023</span>
+            <img src="./assets/cover3.avif" alt="" class="event_card" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testemonials" id="testemonials">
+      <h3>Testemonials</h3>
+      <h1>What our customer says</h1>
+
+      <div class="testimonial_container">
+        <div class="owl-carousel owl-theme">
+          <div class="test_card" id="card_one">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon1" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+
+          <div id="card2" class="test_card">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon2" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+          <div id="card3" class="test_card">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon3" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+          <div id="card4" class="test_card">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon4" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+
+          <div id="card5" class="test_card">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon5" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+          <div id="card6" class="test_card">
+            <img src="./assets/taxi-driver.png" class="icons" id="icon6" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              odit molestiae illum ipsam pariatur explicabo optio, id, ipsum
+              atque vel nihil doloribus esse, officiis temporibus iure quidem
+              praesentium nulla perferendis?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="first">
+        <h3>Hotel</h3>
+        <ul>
+          <li>(12) 345 67890</li>
+
+          <li>info.colorlib@gmail.com</li>
+
+          <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+        </ul>
+      </div>
+      <div class="second">
+        <h3>CONTACT US</h3>
+        <ul>
+          <li>(12) 345 67890</li>
+
+          <li>info.colorlib@gmail.com</li>
+
+          <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+        </ul>
+      </div>
+      <div class="third">
+        <h3>NEW LATEST</h3>
+        <ul>
+          <li>(12) 345 67890</li>
+
+          <li>info.colorlib@gmail.com</li>
+
+          <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
